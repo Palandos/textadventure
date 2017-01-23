@@ -11,12 +11,10 @@ public class Character {
     private final UUID id = UUID.randomUUID();
 
     private String name;
-    private int strenght;
-    private int dexterity;
-    private int intelligence;
-    private int charisma;
-    private int appearance;
+    private List<Attribute> attributeList;
     private List<Ability> abilityList;
+
+    public Character() {}
 
     public String getName() {
         return name;
@@ -24,5 +22,13 @@ public class Character {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Attribute> getAttributeList() {
+        return attributeList;
+    }
+
+    public void setAttributeList(List<Attribute> attributeList) {
+        this.attributeList = attributeList;
     }
 }

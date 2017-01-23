@@ -1,0 +1,32 @@
+<!--
+* Created by daniel on 23.01.17.
+-->
+
+<section>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Charaktererstellung</h2>
+
+            <input class="text-input" ng-model="character.name" placeholder="Charaktername">
+
+            <div ng-repeat="attribute in character.attributeList" class="input-group">
+                <span>{{attribute.name}}</span>
+
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number"  data-type="minus" data-field="attribute_{{attribute.name}}">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </span>
+
+                <label class="visuallyhidden" for="attr_{{attribute.name}}">Eigenschaftswert</label>
+                <input name="attribute_{{attribute.name}}" id="attr_{{attribute.name}}" ng-model="attribute.value" class="form-control input-number" min="0" max="100">
+
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="attribute_{{attribute.name}}">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

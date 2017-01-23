@@ -1,0 +1,7 @@
+<!--
+* Created by daniel on 23.01.17.
+-->
+<div class="container">
+    <uib-alert ng-repeat="alert in global.alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}
+    </uib-alert>
+</div>
