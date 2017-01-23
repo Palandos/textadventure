@@ -1,0 +1,30 @@
+{
+  "name": "textadventure",
+  "version": "0.0.1",
+  "description": "A web-based Textadventure.",
+
+  "repository": {
+    "type": "git",
+    "url": "git@"
+  },
+  "scripts": {
+    "bower": "./node_modules/.bin/bower install"
+  },
+  "author": "Daniel Wolpers",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bower": "^1.7.2"
+  },
+  "devDependencies": {
+    "node-dev": "^2.6.2"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp/bower_components/",
+    "test",
+    "tests"
+  ]
+}
