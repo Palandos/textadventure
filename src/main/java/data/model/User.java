@@ -1,7 +1,6 @@
 package data.model;
 
-import data.model.Character;
-
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -9,7 +8,7 @@ import java.util.UUID;
 /**
  * Created by daniel on 23.01.17.
  */
-public class User {
+public class User implements Serializable{
 
     private final UUID id = UUID.randomUUID();
 

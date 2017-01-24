@@ -4,7 +4,7 @@
 
   var myApp = angular.module('app-login',[]);
 
-  myApp.controller('loginController', ['$scope', function($scope) {
+  myApp.controller('loginController', ['$http', '$scope', function($http, $scope) {
       $scope.username = "";
       $scope.password = "";
       $scope.responseSuccess = false;

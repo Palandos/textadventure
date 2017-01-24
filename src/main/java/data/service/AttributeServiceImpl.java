@@ -11,7 +11,7 @@ import java.util.List;
  * Created by daniel on 23.01.17.
  */
 
-@EJB
+
 public class AttributeServiceImpl implements AttributeService {
 
     public List<Attribute> createAttributeList() {

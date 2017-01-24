@@ -12,11 +12,10 @@ import java.util.List;
  * Created by daniel on 23.01.17.
  */
 
-@EJB
+
 public class CharacterServiceImpl implements CharacterService {
 
-    @EJB
-    AttributeService attributeService;
+    private AttributeService attributeService;
 
     public Character cleanCharacter() {
         Character character = new Character();

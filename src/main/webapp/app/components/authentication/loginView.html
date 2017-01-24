@@ -1,22 +1,22 @@
 <!--
 * Created by daniel on 23.01.17.
 -->
-<div layout-align="center" class="container" style="text-align: center;" ng-controller="loginController as loginCtrl">
+<div layout-align="center" class="container" style="text-align: center;">
     <div class="col-md-6 col-md-offset-3">
         <h2>Login</h2>
-        <form name="form" ng-submit="loginCtrl.submitLoginForm()" role="form">
+        <form name="form" ng-submit="submitLoginForm()" ng-controller="loginController as lCtrl" role="form">
             <fieldset>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="form-control" ng-model="loginCtrl.username" required />
-                <span ng-show="loginCtrl.responseFailure" class="help-block">Bitte den Benutzernamen noch einmal überprüfen</span>
+                <input type="text" name="username" id="username" class="form-control" ng-model="lCtrl.username" required />
+                <span ng-show="lCtrl.responseFailure" class="help-block">Bitte den Benutzernamen noch einmal überprüfen</span>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control" ng-model="loginCtrl.password" required />
+                <input type="password" name="password" id="password" class="form-control" ng-model="lCtrl.password" required />
                 <span ng-show="" class="help-block">Bitte das Passwort noch einmal überprüfen</span>
             </div>
-            <div class="alert alert-danger" ng-show="responseFailure">
+            <div class="alert alert-danger" ng-show="lCtrl.responseFailure">
                 <span>Falsche Anmeldedaten, bitte überprüfen Sie die Eingaben!</span>
             </div>
             <div class="form-actions">

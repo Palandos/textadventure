@@ -1,11 +1,12 @@
 package data.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
  * Created by daniel on 23.01.17.
  */
-public class Attribute {
+public class Attribute implements Serializable{
 
     private final UUID id = UUID.randomUUID();
 
