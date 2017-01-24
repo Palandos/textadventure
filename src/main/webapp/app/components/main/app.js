@@ -6,15 +6,17 @@
     [
       'ui.bootstrap',
       'ngRoute',
+      'ngCookies',
       'ngResource',
-      'app-filters',
-      'app-menu',
-      'app-footer',
+      'ngMaterial',
       'app-alert',
-      'characterCreation'
+      'app-login',
+      'app-register',
+      'app-content-home',
+      'app-character-creation'
     ]);
 
-  app.controller('appController', ['$scope', '$rootScope', function($scope, $rootScope) {
+  app.controller('textadventureController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
     $rootScope.global = {
       wait: false,
@@ -36,12 +38,24 @@
   app.config(function($routeProvider) {
 
     $routeProvider.
-    when('/', {
-      templateUrl: 'app/components/content/authentication/authentication.html'
+    when('/characterCreation', {
+      templateUrl: 'app/components/gameContent/characterCreationView.html',
+      controller: 'characterCreationControl'
     }).
-    otherwise({
-      redirectTo: '/'
-    });
+    when('/login', {
+      controller: 'loginController',
+      templateUrl: 'app/components/authentication/loginView.html',
+      controllerAs: 'loginCtrl'
+    }).
+    when('/register', {
+      controller: 'registerController',
+      templateUrl: 'app/components/authentication/registerView.html',
+      controllerAs: 'registerCtrl'
+    }).
+    when('/', {
+      templateUrl: 'app/components/home/homeView.html'
+    }).
+    otherwise({ redirectTo: '/' });
   })
 })();
 

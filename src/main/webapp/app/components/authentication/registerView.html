@@ -1,0 +1,39 @@
+<div class="col-md-6 col-md-offset-3" ng-controller="registerController as rCtrl">
+    <h2>Register</h2>
+    <form name="form" ng-submit="rCtrl.register()" role="form">
+        <div class="form-group">
+            <label for="firstName">Vorname</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="rCtrl.firstName" required />
+            <span ng-show="rCtrl.responseFailure" class="help-block">Es muss ein Vorname angegeben sein</span>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Nachname</label>
+            <input type="text" name="lastName" id="lastName" class="form-control" ng-model="vm.user.lastName" required />
+            <span ng-show="rCtrl.responseFailure" class="help-block">Es muss ein Nachname angegeben sein.</span>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <label for="birthdate">Geburtsdatum</label>
+                <input id="birthdate" type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+            </div>
+            <span ng-show="rCtrl.responseFailure" class="help-block">Es muss ein gültiges Geburtsdatum angegeben sein.</span>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
+            <span ng-show="rCtrl.responseFailure" class="help-block">Username is required</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="user.password" required />
+            <span ng-show="rCtrl.responseFailure" class="help-block">Es muss ein Passwort angegeben sein (8-24 Zeichen)</span>
+        </div>
+        <div class="alert alert-danger" ng-show="responseFailure">
+            <span>Falsche Anmeldedaten, bitte überprüfen Sie die Eingaben!</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Register</button>
+            <a href="#!/login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>
